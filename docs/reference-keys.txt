@@ -1,0 +1,11 @@
+資料讀取
+設定路徑
+前置作業
+讀取-csv
+讀取-txt
+讀取-stata
+讀取-spss
+讀取網路-csv
+其他讀取問題
+the-pool-of-tears
+a-caucus-race-and-a-long-tale
