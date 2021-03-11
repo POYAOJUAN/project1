@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 A caucus-race and a long tale | 社會科學統計方法</title>
-  <meta name="description" content="Chapter 3 A caucus-race and a long tale | 社會科學統計方法" />
+  <title>Chapter 3 課堂作業練習 | 社會科學統計方法</title>
+  <meta name="description" content="Chapter 3 課堂作業練習 | 社會科學統計方法" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 A caucus-race and a long tale | 社會科學統計方法" />
+  <meta property="og:title" content="Chapter 3 課堂作業練習 | 社會科學統計方法" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 A caucus-race and a long tale | 社會科學統計方法" />
+  <meta name="twitter:title" content="Chapter 3 課堂作業練習 | 社會科學統計方法" />
   
   
   
@@ -24,14 +24,14 @@
 <meta name="author" content="PO-YAO JUAN" />
 
 
-<meta name="date" content="2021-03-10" />
+<meta name="date" content="2021-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-pool-of-tears.html"/>
+<link rel="prev" href="資料清洗與轉換.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,6 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -134,18 +136,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">社會科學統計方法</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 資料讀取</a><ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#設定路徑"><i class="fa fa-check"></i><b>1.1</b> 設定路徑</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#前置作業"><i class="fa fa-check"></i><b>1.2</b> 前置作業</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#讀取-csv"><i class="fa fa-check"></i><b>1.3</b> 讀取 CSV</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#讀取-txt"><i class="fa fa-check"></i><b>1.4</b> 讀取 TXT</a></li>
-<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#讀取-stata"><i class="fa fa-check"></i><b>1.5</b> 讀取 STATA</a></li>
-<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#讀取-spss"><i class="fa fa-check"></i><b>1.6</b> 讀取 SPSS</a></li>
-<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#讀取網路-csv"><i class="fa fa-check"></i><b>1.7</b> 讀取網路 CSV</a></li>
-<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#其他讀取問題"><i class="fa fa-check"></i><b>1.8</b> 其他讀取問題</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 資料讀取與常用指令</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#資料讀取"><i class="fa fa-check"></i><b>1.1</b> 資料讀取</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#設定路徑"><i class="fa fa-check"></i><b>1.1.1</b> 設定路徑</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#前置作業"><i class="fa fa-check"></i><b>1.1.2</b> 前置作業</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#讀取-csv"><i class="fa fa-check"></i><b>1.1.3</b> 讀取 CSV</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#讀取-txt"><i class="fa fa-check"></i><b>1.1.4</b> 讀取 TXT</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#讀取-stata"><i class="fa fa-check"></i><b>1.1.5</b> 讀取 STATA</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#讀取-spss"><i class="fa fa-check"></i><b>1.1.6</b> 讀取 SPSS</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#讀取網路-csv"><i class="fa fa-check"></i><b>1.1.7</b> 讀取網路 CSV</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#其他讀取問題"><i class="fa fa-check"></i><b>1.1.8</b> 其他讀取問題</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="the-pool-of-tears.html"><a href="the-pool-of-tears.html"><i class="fa fa-check"></i><b>2</b> The pool of tears</a></li>
-<li class="chapter" data-level="3" data-path="a-caucus-race-and-a-long-tale.html"><a href="a-caucus-race-and-a-long-tale.html"><i class="fa fa-check"></i><b>3</b> A caucus-race and a long tale</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#常用指令"><i class="fa fa-check"></i><b>1.2</b> 常用指令</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#資料匯出"><i class="fa fa-check"></i><b>1.2.1</b> 資料匯出</a></li>
+<li class="chapter" data-level="1.2.2" data-path="index.html"><a href="index.html#管理環境空間"><i class="fa fa-check"></i><b>1.2.2</b> 管理環境空間</a></li>
+<li class="chapter" data-level="1.2.3" data-path="index.html"><a href="index.html#程式相關"><i class="fa fa-check"></i><b>1.2.3</b> 程式相關</a></li>
+<li class="chapter" data-level="1.2.4" data-path="index.html"><a href="index.html#字串相關"><i class="fa fa-check"></i><b>1.2.4</b> 字串相關</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#更改資料變數操作"><i class="fa fa-check"></i><b>1.3</b> 更改資料變數操作</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html"><i class="fa fa-check"></i><b>2</b> 資料清洗與轉換</a><ul>
+<li class="chapter" data-level="2.1" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#管線pipe的介紹"><i class="fa fa-check"></i><b>2.1</b> 管線(pipe)的介紹</a></li>
+<li class="chapter" data-level="2.2" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#管線使用邏輯"><i class="fa fa-check"></i><b>2.2</b> 管線使用邏輯 %&gt;%</a></li>
+<li class="chapter" data-level="2.3" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#dplyr資料轉換"><i class="fa fa-check"></i><b>2.3</b> dplyr資料轉換</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#filter"><i class="fa fa-check"></i><b>2.3.1</b> filter()</a></li>
+<li class="chapter" data-level="2.3.2" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#arrange"><i class="fa fa-check"></i><b>2.3.2</b> arrange()</a></li>
+<li class="chapter" data-level="2.3.3" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#select"><i class="fa fa-check"></i><b>2.3.3</b> select()</a></li>
+<li class="chapter" data-level="2.3.4" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#mutate"><i class="fa fa-check"></i><b>2.3.4</b> mutate()</a></li>
+<li class="chapter" data-level="2.3.5" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#summarise"><i class="fa fa-check"></i><b>2.3.5</b> summarise()</a></li>
+<li class="chapter" data-level="2.3.6" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#group_by"><i class="fa fa-check"></i><b>2.3.6</b> group_by()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="課堂作業練習.html"><a href="課堂作業練習.html"><i class="fa fa-check"></i><b>3</b> 課堂作業練習</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -165,8 +187,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="a-caucus-race-and-a-long-tale" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> A caucus-race and a long tale</h1>
+<div id="課堂作業練習" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> 課堂作業練習</h1>
 
 </div>
             </section>
@@ -174,7 +196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="the-pool-of-tears.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="資料清洗與轉換.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -206,7 +228,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/POYAOJUAN/project1/edit/master/03-race.Rmd",
+"link": "https://github.com/POYAOJUAN/project1/edit/master/03-homework.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -214,7 +236,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/POYAOJUAN/project1/blob/master/03-race.Rmd",
+"link": "https://github.com/POYAOJUAN/project1/blob/master/03-homework.Rmd",
 "text": null
 },
 "download": null,

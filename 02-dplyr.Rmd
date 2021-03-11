@@ -1,0 +1,107 @@
+# 資料清洗與轉換
+
+## 管線(pipe)的介紹
+
+1. 管線`%>%`，源自於Stefan Milton Bache的**magrittr**套件。  
+2. R在載入tidyverse中的套件會自動為你載入`%>%`，所以你通常不需要明確載入**migrittr**。   (例如`library(dplyr)`就是tidyverse的一部分) 
+3. 如果你需要用到`%T>%`、`%$%`、`%<>%`則需要明確載入**migrittr**套件。   
+關於第三點的延伸學習可以參考：[migrittr cran](https://cran.r-project.org/web/packages/magrittr/magrittr.pdf)、[R for Data Science:pipe](https://r4ds.had.co.nz/pipes.html)、[我覺得寫最好的](https://zhuanlan.zhihu.com/p/339107871)
+
+```{r}
+library(magrittr)
+```
+
+何時該用管線?  
+   1. 資料處裡為線性  
+  2. 簡單(單一)輸出結果  
+  3. 運算邏輯不超過10個
+  
+  
+
+
+何時不該使用管線?  
+   1. 資料處裡多元複雜的線性  
+  2. 多個輸入與輸出結果  
+  3. 運算邏輯超過10個  
+  
+## 管線使用邏輯 %>%
+
+假設我們想要探索`mtcars`裡面的資料    
+題目：  **請問在馬力(hp)大於100匹的車子中，平均一加侖能跑幾英里(mpg)與平均車重(wt)是多少？**  
+
+```{r}
+hw <- mtcars[which(mtcars$hp>100),]
+avg_mpg <- mean(hw$mpg)
+avg_wt <- mean(hw$wt)
+print(c(avg_mpg, avg_wt))
+
+
+```
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+mtcars %>% 
+  filter(hp>100) %>% 
+  summarise(avg.mpg=mean(mpg), avg.wt=mean(wt))
+
+```
+
+
+## dplyr資料轉換
+
+
+  dplyr中整理資料的重要函數：  
+  - `filter()` 篩選變數邏輯  
+  - `arrange()` 排列順序  
+  - `select()` 選擇變數  
+  - `mutate()` 新增變數  
+  - `summarise()` 摘要  
+  - `group_by()` 分組  
+  
+### filter()
+
+```{r}
+mtcars %>% 
+  filter(hp>100) %>% 
+  pull(hp)
+```
+
+### arrange()
+
+```{r}
+mtcars %>% 
+  filter(hp>100) %>% 
+  arrange(desc(hp)) %>%
+  pull(hp)
+```
+
+### select()
+
+```{r}
+mtcars %>% 
+  select(cyl, mpg)
+```
+### mutate()
+
+```{r}
+mtcars %>% 
+  mutate(newhp=log(hp)) %>%
+  glimpse()
+```
+
+### summarise()
+
+```{r}
+mtcars %>% 
+  summarise(sum_mpg=sum(mpg))
+```
+
+### group_by()
+
+```{r}
+mtcars %>% 
+  group_by(cyl) %>%
+  summarise(sum_mpg=sum(mpg))
+```
+
+**NOTE**：詳細可以參考[dplyr cran](https://cran.r-project.org/web/packages/dplyr/dplyr.pdf)或是[R for Data Science:Data transformation](https://r4ds.had.co.nz/transform.html)
