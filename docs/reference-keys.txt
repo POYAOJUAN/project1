@@ -1,4 +1,4 @@
-tab:unnamed-chunk-17
+tab:unnamed-chunk-15
 資料讀取與常用指令
 資料讀取
 設定路徑
