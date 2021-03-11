@@ -204,15 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>如果你需要用到<code>%T&gt;%</code>、<code>%$%</code>、<code>%&lt;&gt;%</code>則需要明確載入<strong>migrittr</strong>套件。<br />
 關於第三點的延伸學習可以參考：<a href="https://cran.r-project.org/web/packages/magrittr/magrittr.pdf">migrittr cran</a>、<a href="https://r4ds.had.co.nz/pipes.html">R for Data Science:pipe</a>、<a href="https://zhuanlan.zhihu.com/p/339107871">我覺得寫最好的</a></li>
 </ol>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="資料清洗與轉換.html#cb46-1"></a><span class="kw">library</span>(magrittr)</span></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;magrittr&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:purrr&#39;:
-## 
-##     set_names</code></pre>
-<pre><code>## The following object is masked from &#39;package:tidyr&#39;:
-## 
-##     extract</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="資料清洗與轉換.html#cb43-1"></a><span class="kw">library</span>(magrittr)</span></code></pre></div>
 <p>何時該用管線?<br />
 1. 資料處裡為線性<br />
 2. 簡單(單一)輸出結果<br />
@@ -225,27 +217,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="管線使用邏輯" class="section level2">
 <h2><span class="header-section-number">2.2</span> 管線使用邏輯 %&gt;%</h2>
 <p>解釋</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="資料清洗與轉換.html#cb50-1"></a><span class="cf">function</span>(data)</span>
-<span id="cb50-2"><a href="資料清洗與轉換.html#cb50-2"></a>data <span class="op">%&gt;%</span><span class="st"> </span><span class="cf">function</span>()</span></code></pre></div>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="資料清洗與轉換.html#cb51-1"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="ot">NA</span>, <span class="dv">3</span>) </span>
-<span id="cb51-2"><a href="資料清洗與轉換.html#cb51-2"></a><span class="kw">sum</span>(<span class="kw">is.na</span>(z))</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="資料清洗與轉換.html#cb44-1"></a><span class="cf">function</span>(data)</span>
+<span id="cb44-2"><a href="資料清洗與轉換.html#cb44-2"></a>data <span class="op">%&gt;%</span><span class="st"> </span><span class="cf">function</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="資料清洗與轉換.html#cb45-1"></a>z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="ot">NA</span>, <span class="dv">8</span>, <span class="dv">3</span>, <span class="ot">NA</span>, <span class="dv">3</span>) </span>
+<span id="cb45-2"><a href="資料清洗與轉換.html#cb45-2"></a><span class="kw">sum</span>(<span class="kw">is.na</span>(z))</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="資料清洗與轉換.html#cb53-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb53-2"><a href="資料清洗與轉換.html#cb53-2"></a>z <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb53-3"><a href="資料清洗與轉換.html#cb53-3"></a><span class="st">  </span><span class="kw">is.na</span>() <span class="op">%&gt;%</span></span>
-<span id="cb53-4"><a href="資料清洗與轉換.html#cb53-4"></a><span class="st">  </span><span class="kw">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="資料清洗與轉換.html#cb47-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb47-2"><a href="資料清洗與轉換.html#cb47-2"></a>z <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb47-3"><a href="資料清洗與轉換.html#cb47-3"></a><span class="st">  </span><span class="kw">is.na</span>() <span class="op">%&gt;%</span></span>
+<span id="cb47-4"><a href="資料清洗與轉換.html#cb47-4"></a><span class="st">  </span><span class="kw">sum</span>()</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>假設我們想要探索<code>mtcars</code>裡面的資料<br />
 題目： <strong>請問在馬力(hp)大於100匹的車子中，平均一加侖能跑幾英里(mpg)與平均車重(wt)是多少？</strong></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="資料清洗與轉換.html#cb55-1"></a>hw &lt;-<span class="st"> </span>mtcars[<span class="kw">which</span>(mtcars<span class="op">$</span>hp<span class="op">&gt;</span><span class="dv">100</span>),]</span>
-<span id="cb55-2"><a href="資料清洗與轉換.html#cb55-2"></a>avg_mpg &lt;-<span class="st"> </span><span class="kw">mean</span>(hw<span class="op">$</span>mpg)</span>
-<span id="cb55-3"><a href="資料清洗與轉換.html#cb55-3"></a>avg_wt &lt;-<span class="st"> </span><span class="kw">mean</span>(hw<span class="op">$</span>wt)</span>
-<span id="cb55-4"><a href="資料清洗與轉換.html#cb55-4"></a><span class="kw">print</span>(<span class="kw">c</span>(avg_mpg, avg_wt))</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="資料清洗與轉換.html#cb49-1"></a>hw &lt;-<span class="st"> </span>mtcars[<span class="kw">which</span>(mtcars<span class="op">$</span>hp<span class="op">&gt;</span><span class="dv">100</span>),]</span>
+<span id="cb49-2"><a href="資料清洗與轉換.html#cb49-2"></a>avg_mpg &lt;-<span class="st"> </span><span class="kw">mean</span>(hw<span class="op">$</span>mpg)</span>
+<span id="cb49-3"><a href="資料清洗與轉換.html#cb49-3"></a>avg_wt &lt;-<span class="st"> </span><span class="kw">mean</span>(hw<span class="op">$</span>wt)</span>
+<span id="cb49-4"><a href="資料清洗與轉換.html#cb49-4"></a><span class="kw">print</span>(<span class="kw">c</span>(avg_mpg, avg_wt))</span></code></pre></div>
 <pre><code>## [1] 17.452174  3.569652</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="資料清洗與轉換.html#cb57-1"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb57-2"><a href="資料清洗與轉換.html#cb57-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb57-3"><a href="資料清洗與轉換.html#cb57-3"></a><span class="st">  </span><span class="kw">filter</span>(hp<span class="op">&gt;</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb57-4"><a href="資料清洗與轉換.html#cb57-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">avg.mpg=</span><span class="kw">mean</span>(mpg), <span class="dt">avg.wt=</span><span class="kw">mean</span>(wt))</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="資料清洗與轉換.html#cb51-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb51-2"><a href="資料清洗與轉換.html#cb51-2"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb51-3"><a href="資料清洗與轉換.html#cb51-3"></a><span class="st">  </span><span class="kw">filter</span>(hp<span class="op">&gt;</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb51-4"><a href="資料清洗與轉換.html#cb51-4"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">avg.mpg=</span><span class="kw">mean</span>(mpg), <span class="dt">avg.wt=</span><span class="kw">mean</span>(wt))</span></code></pre></div>
 <pre><code>##    avg.mpg   avg.wt
 ## 1 17.45217 3.569652</code></pre>
 </div>
@@ -260,23 +252,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 - <code>group_by()</code> 分組</p>
 <div id="filter" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> filter()</h3>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="資料清洗與轉換.html#cb59-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb59-2"><a href="資料清洗與轉換.html#cb59-2"></a><span class="st">  </span><span class="kw">filter</span>(hp<span class="op">&gt;</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb59-3"><a href="資料清洗與轉換.html#cb59-3"></a><span class="st">  </span><span class="kw">pull</span>(hp)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="資料清洗與轉換.html#cb53-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb53-2"><a href="資料清洗與轉換.html#cb53-2"></a><span class="st">  </span><span class="kw">filter</span>(hp<span class="op">&gt;</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb53-3"><a href="資料清洗與轉換.html#cb53-3"></a><span class="st">  </span><span class="kw">pull</span>(hp)</span></code></pre></div>
 <pre><code>##  [1] 110 110 110 175 105 245 123 123 180 180 180 205 215 230 150 150 245 175 113 264 175 335 109</code></pre>
 </div>
 <div id="arrange" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> arrange()</h3>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="資料清洗與轉換.html#cb61-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb61-2"><a href="資料清洗與轉換.html#cb61-2"></a><span class="st">  </span><span class="kw">filter</span>(hp<span class="op">&gt;</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb61-3"><a href="資料清洗與轉換.html#cb61-3"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(hp)) <span class="op">%&gt;%</span></span>
-<span id="cb61-4"><a href="資料清洗與轉換.html#cb61-4"></a><span class="st">  </span><span class="kw">pull</span>(hp)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="資料清洗與轉換.html#cb55-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb55-2"><a href="資料清洗與轉換.html#cb55-2"></a><span class="st">  </span><span class="kw">filter</span>(hp<span class="op">&gt;</span><span class="dv">100</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb55-3"><a href="資料清洗與轉換.html#cb55-3"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(hp)) <span class="op">%&gt;%</span></span>
+<span id="cb55-4"><a href="資料清洗與轉換.html#cb55-4"></a><span class="st">  </span><span class="kw">pull</span>(hp)</span></code></pre></div>
 <pre><code>##  [1] 335 264 245 245 230 215 205 180 180 180 175 175 175 150 150 123 123 113 110 110 110 109 105</code></pre>
 </div>
 <div id="select" class="section level3">
 <h3><span class="header-section-number">2.3.3</span> select()</h3>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="資料清洗與轉換.html#cb63-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb63-2"><a href="資料清洗與轉換.html#cb63-2"></a><span class="st">  </span><span class="kw">select</span>(cyl, mpg)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="資料清洗與轉換.html#cb57-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb57-2"><a href="資料清洗與轉換.html#cb57-2"></a><span class="st">  </span><span class="kw">select</span>(cyl, mpg)</span></code></pre></div>
 <pre><code>##                     cyl  mpg
 ## Mazda RX4             6 21.0
 ## Mazda RX4 Wag         6 21.0
@@ -313,9 +305,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="mutate" class="section level3">
 <h3><span class="header-section-number">2.3.4</span> mutate()</h3>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="資料清洗與轉換.html#cb65-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb65-2"><a href="資料清洗與轉換.html#cb65-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">newhp=</span><span class="kw">log</span>(hp)) <span class="op">%&gt;%</span></span>
-<span id="cb65-3"><a href="資料清洗與轉換.html#cb65-3"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="資料清洗與轉換.html#cb59-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb59-2"><a href="資料清洗與轉換.html#cb59-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">newhp=</span><span class="kw">log</span>(hp)) <span class="op">%&gt;%</span></span>
+<span id="cb59-3"><a href="資料清洗與轉換.html#cb59-3"></a><span class="st">  </span><span class="kw">glimpse</span>()</span></code></pre></div>
 <pre><code>## Rows: 32
 ## Columns: 12
 ## $ mpg   &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.8, 16.4, 17.3, 15.2, 10.~
@@ -333,16 +325,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="summarise" class="section level3">
 <h3><span class="header-section-number">2.3.5</span> summarise()</h3>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="資料清洗與轉換.html#cb67-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb67-2"><a href="資料清洗與轉換.html#cb67-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">sum_mpg=</span><span class="kw">sum</span>(mpg))</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="資料清洗與轉換.html#cb61-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb61-2"><a href="資料清洗與轉換.html#cb61-2"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">sum_mpg=</span><span class="kw">sum</span>(mpg))</span></code></pre></div>
 <pre><code>##   sum_mpg
 ## 1   642.9</code></pre>
 </div>
 <div id="group_by" class="section level3">
 <h3><span class="header-section-number">2.3.6</span> group_by()</h3>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="資料清洗與轉換.html#cb69-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb69-2"><a href="資料清洗與轉換.html#cb69-2"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
-<span id="cb69-3"><a href="資料清洗與轉換.html#cb69-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">sum_mpg=</span><span class="kw">sum</span>(mpg))</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="資料清洗與轉換.html#cb63-1"></a>mtcars <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb63-2"><a href="資料清洗與轉換.html#cb63-2"></a><span class="st">  </span><span class="kw">group_by</span>(cyl) <span class="op">%&gt;%</span></span>
+<span id="cb63-3"><a href="資料清洗與轉換.html#cb63-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">sum_mpg=</span><span class="kw">sum</span>(mpg))</span></code></pre></div>
 <pre><code>## # A tibble: 3 x 2
 ##     cyl sum_mpg
 ## * &lt;dbl&gt;   &lt;dbl&gt;
@@ -354,9 +346,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="reshape2" class="section level2">
 <h2><span class="header-section-number">2.4</span> reshape2</h2>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="資料清洗與轉換.html#cb71-1"></a><span class="kw">library</span>(reshape2)</span></code></pre></div>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="資料清洗與轉換.html#cb72-1"></a>wb &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;c:/Users/Juan/Desktop/rproject/wb_small.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb72-2"><a href="資料清洗與轉換.html#cb72-2"></a><span class="kw">head</span>(wb)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="資料清洗與轉換.html#cb65-1"></a><span class="kw">library</span>(reshape2)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="資料清洗與轉換.html#cb66-1"></a>wb &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;c:/Users/Juan/Desktop/rproject/wb_small.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb66-2"><a href="資料清洗與轉換.html#cb66-2"></a><span class="kw">head</span>(wb)</span></code></pre></div>
 <pre><code>##   Country.Name X2020..2020. X2021..2021. X2022..2022.
 ## 1  Afghanistan         -5.5          2.5          3.3
 ## 2      Albania         -6.7          5.1          4.4
@@ -364,8 +356,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4       Angola         -4.0          0.9          3.5
 ## 5    Argentina        -10.6          4.9          1.9
 ## 6      Armenia         -8.0          3.1          4.5</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="資料清洗與轉換.html#cb74-1"></a>wb_melt &lt;-<span class="st"> </span>reshape2<span class="op">::</span><span class="kw">melt</span>(wb, <span class="dt">id.var=</span><span class="st">&quot;Country.Name&quot;</span>)</span>
-<span id="cb74-2"><a href="資料清洗與轉換.html#cb74-2"></a><span class="kw">head</span>(wb_melt)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="資料清洗與轉換.html#cb68-1"></a>wb_melt &lt;-<span class="st"> </span>reshape2<span class="op">::</span><span class="kw">melt</span>(wb, <span class="dt">id.var=</span><span class="st">&quot;Country.Name&quot;</span>)</span>
+<span id="cb68-2"><a href="資料清洗與轉換.html#cb68-2"></a><span class="kw">head</span>(wb_melt)</span></code></pre></div>
 <pre><code>##   Country.Name     variable value
 ## 1  Afghanistan X2020..2020.  -5.5
 ## 2      Albania X2020..2020.  -6.7

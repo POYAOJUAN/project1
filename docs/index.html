@@ -216,16 +216,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>readstata13</code>：.dta (STATA)</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## -- Attaching packages -------------------------------------------------------------- tidyverse 1.3.0 --</code></pre>
-<pre><code>## √ ggplot2 3.3.3     √ purrr   0.3.4
-## √ tibble  3.1.0     √ stringr 1.4.0
-## √ tidyr   1.1.2     √ forcats 0.5.1
-## √ readr   1.4.0</code></pre>
-<pre><code>## -- Conflicts ----------------------------------------------------------------- tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
-## x car::recode()   masks dplyr::recode()
-## x purrr::some()   masks car::some()</code></pre>
 <p><strong>NOTE</strong>： 因為載入tidyverse套件出現的衝突訊息表示它複寫了基礎R的一些函式，如果你想要使用<code>stats</code>裡面的<code>filter()</code>以及<code>lag()</code>這兩個函式，則必須使用其完整名稱<code>stats::filter()</code>以及<code>stats::lag()</code>。</p>
 </div>
 <div id="讀取-csv" class="section level2">
@@ -244,14 +234,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>read_tsv()</code>：讀取tab分隔檔</li>
 <li><code>read_delim()</code>：讀取任何分隔符號</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1"></a>read.csv</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1"></a>read.csv</span></code></pre></div>
 <pre><code>## function (file, header = TRUE, sep = &quot;,&quot;, quote = &quot;\&quot;&quot;, dec = &quot;.&quot;, 
 ##     fill = TRUE, comment.char = &quot;&quot;, ...) 
 ## read.table(file = file, header = header, sep = sep, quote = quote, 
 ##     dec = dec, fill = fill, comment.char = comment.char, ...)
 ## &lt;bytecode: 0x0000015730983840&gt;
 ## &lt;environment: namespace:utils&gt;</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1"></a>readr<span class="op">::</span>read_csv</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="index.html#cb5-1"></a>readr<span class="op">::</span>read_csv</span></code></pre></div>
 <pre><code>## function (file, col_names = TRUE, col_types = NULL, locale = default_locale(), 
 ##     na = c(&quot;&quot;, &quot;NA&quot;), quoted_na = TRUE, quote = &quot;\&quot;&quot;, comment = &quot;&quot;, 
 ##     trim_ws = TRUE, skip = 0, n_max = Inf, guess_max = min(1000, 
@@ -267,26 +257,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## }
 ## &lt;bytecode: 0x0000015731cd8f10&gt;
 ## &lt;environment: namespace:readr&gt;</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/councilor.csv&quot;</span>)</span>
-<span id="cb10-2"><a href="index.html#cb10-2"></a><span class="kw">class</span>(a)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="index.html#cb7-1"></a>a &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/councilor.csv&quot;</span>)</span>
+<span id="cb7-2"><a href="index.html#cb7-2"></a><span class="kw">class</span>(a)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1"></a>b &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_csv</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/councilor.csv&quot;</span>, </span>
-<span id="cb12-2"><a href="index.html#cb12-2"></a>              <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&quot;big5&quot;</span>))</span>
-<span id="cb12-3"><a href="index.html#cb12-3"></a><span class="kw">class</span>(b)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="index.html#cb9-1"></a>b &lt;-<span class="st"> </span>readr<span class="op">::</span><span class="kw">read_csv</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/councilor.csv&quot;</span>, </span>
+<span id="cb9-2"><a href="index.html#cb9-2"></a>              <span class="dt">locale =</span> <span class="kw">locale</span>(<span class="dt">encoding =</span> <span class="st">&quot;big5&quot;</span>))</span>
+<span id="cb9-3"><a href="index.html#cb9-3"></a><span class="kw">class</span>(b)</span></code></pre></div>
 <pre><code>## [1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;</code></pre>
 <p>如果想要了解更多請參考<a href="https://r4ds.had.co.nz/data-import.html">R for Data Science by Garrett Grolemund, Hadley Wickham: Data Import</a></p>
 </div>
 <div id="讀取-txt" class="section level2">
 <h2><span class="header-section-number">1.4</span> 讀取 TXT</h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1"></a>students &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Studentsfull.txt&quot;</span>, <span class="dt">header=</span>T)</span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1"></a>students_csv &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Studentsfull.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="index.html#cb16-1"></a>student_delim &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Studentsfull.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="index.html#cb11-1"></a>students &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Studentsfull.txt&quot;</span>, <span class="dt">header=</span>T)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1"></a>students_csv &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Studentsfull.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="index.html#cb13-1"></a>student_delim &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Studentsfull.txt&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p><strong>NOTE</strong>： 這邊的用意其實是想要告訴各位，讀取方式其實不一定局限於某幾個函數，而主要是依照資料內容而定，並更改參數即可。</p>
 </div>
 <div id="讀取-stata" class="section level2">
 <h2><span class="header-section-number">1.5</span> 讀取 STATA</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1"></a>c &lt;-<span class="st"> </span>readstata13<span class="op">::</span><span class="kw">read.dta13</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Mystata.dta&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="index.html#cb18-1"></a>dplyr<span class="op">::</span><span class="kw">glimpse</span>(c) <span class="co">#faster and clearer than `str()`</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1"></a>c &lt;-<span class="st"> </span>readstata13<span class="op">::</span><span class="kw">read.dta13</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/Mystata.dta&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1"></a>dplyr<span class="op">::</span><span class="kw">glimpse</span>(c) <span class="co">#faster and clearer than `str()`</span></span></code></pre></div>
 <pre><code>## Rows: 1,244
 ## Columns: 21
 ## $ Q1          &lt;int&gt; 0, 0, 12, 1, 0, 0, 1, 0, 0, 11, 0, 3, 2, 0, 13, 13, 11, 0, 1, 0, 1, 11, 12, 0, 1,~
@@ -313,48 +303,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="讀取-spss" class="section level2">
 <h2><span class="header-section-number">1.6</span> 讀取 SPSS</h2>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="index.html#cb20-1"></a>d1 &lt;-<span class="st"> </span>foreign<span class="op">::</span><span class="kw">read.spss</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/PP0797B2.sav&quot;</span>, </span>
-<span id="cb20-2"><a href="index.html#cb20-2"></a>                <span class="dt">reencode =</span> <span class="st">&quot;utf-8&quot;</span>, <span class="co">#not `fileEncoding`</span></span>
-<span id="cb20-3"><a href="index.html#cb20-3"></a>                <span class="dt">to.data.frame =</span> T, </span>
-<span id="cb20-4"><a href="index.html#cb20-4"></a>                <span class="dt">use.value.labels=</span>F)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1"></a>d1 &lt;-<span class="st"> </span>foreign<span class="op">::</span><span class="kw">read.spss</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/PP0797B2.sav&quot;</span>, </span>
+<span id="cb17-2"><a href="index.html#cb17-2"></a>                <span class="dt">reencode =</span> <span class="st">&quot;utf-8&quot;</span>, <span class="co">#not `fileEncoding`</span></span>
+<span id="cb17-3"><a href="index.html#cb17-3"></a>                <span class="dt">to.data.frame =</span> T, </span>
+<span id="cb17-4"><a href="index.html#cb17-4"></a>                <span class="dt">use.value.labels=</span>F)</span></code></pre></div>
 <pre><code>## re-encoding from utf-8</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="index.html#cb22-1"></a><span class="kw">class</span>(d1)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1"></a><span class="kw">class</span>(d1)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="index.html#cb24-1"></a>e1 &lt;-<span class="st"> </span>haven<span class="op">::</span><span class="kw">read_sav</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/PP0797B2.sav&quot;</span>, </span>
-<span id="cb24-2"><a href="index.html#cb24-2"></a>               <span class="dt">encoding =</span> <span class="st">&quot;utf-8&quot;</span>) <span class="co">#not `fileEncoding` </span></span>
-<span id="cb24-3"><a href="index.html#cb24-3"></a><span class="kw">class</span>(e1)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1"></a>e1 &lt;-<span class="st"> </span>haven<span class="op">::</span><span class="kw">read_sav</span>(<span class="st">&quot;C:/Users/Juan/Desktop/rproject/PP0797B2.sav&quot;</span>, </span>
+<span id="cb21-2"><a href="index.html#cb21-2"></a>               <span class="dt">encoding =</span> <span class="st">&quot;utf-8&quot;</span>) <span class="co">#not `fileEncoding` </span></span>
+<span id="cb21-3"><a href="index.html#cb21-3"></a><span class="kw">class</span>(e1)</span></code></pre></div>
 <pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
 <p><strong>NOTE</strong>： <strong>haven</strong>套件並不會讀取資料的中文標記。</p>
 <div id="更改資料變數示範" class="section level3">
 <h3><span class="header-section-number">1.6.1</span> 更改資料變數示範</h3>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="index.html#cb26-1"></a>e1<span class="op">$</span>Q1n &lt;-<span class="st"> </span><span class="ot">NA</span></span>
-<span id="cb26-2"><a href="index.html#cb26-2"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">1</span>]&lt;-<span class="st">&#39;非常不同意&#39;</span></span>
-<span id="cb26-3"><a href="index.html#cb26-3"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">2</span>]&lt;-<span class="st">&#39;不同意&#39;</span></span>
-<span id="cb26-4"><a href="index.html#cb26-4"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">3</span>]&lt;-<span class="st">&#39;同意&#39;</span></span>
-<span id="cb26-5"><a href="index.html#cb26-5"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">4</span>]&lt;-<span class="st">&#39;非常同意&#39;</span></span>
-<span id="cb26-6"><a href="index.html#cb26-6"></a>e1<span class="op">$</span>Q1n=<span class="kw">factor</span>(e1<span class="op">$</span>Q1n, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&#39;非常不同意&#39;</span>,<span class="st">&#39;不同意&#39;</span>,<span class="st">&#39;同意&#39;</span>,<span class="st">&#39;非常同意&#39;</span>))</span>
-<span id="cb26-7"><a href="index.html#cb26-7"></a><span class="kw">par</span>(<span class="dt">bg=</span><span class="st">&#39;lightblue&#39;</span>) <span class="co">#family=&quot;&quot;</span></span>
-<span id="cb26-8"><a href="index.html#cb26-8"></a><span class="kw">barplot</span>(<span class="kw">table</span>(e1<span class="op">$</span>Q1n), <span class="dt">col=</span><span class="st">&#39;white&#39;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/unnamed-chunk-225-1.png" width="672" /></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1"></a>extrafont<span class="op">::</span><span class="kw">fonts</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1"></a>e1<span class="op">$</span>Q1n &lt;-<span class="st"> </span><span class="ot">NA</span></span>
+<span id="cb23-2"><a href="index.html#cb23-2"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">1</span>]&lt;-<span class="st">&#39;非常不同意&#39;</span></span>
+<span id="cb23-3"><a href="index.html#cb23-3"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">2</span>]&lt;-<span class="st">&#39;不同意&#39;</span></span>
+<span id="cb23-4"><a href="index.html#cb23-4"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">3</span>]&lt;-<span class="st">&#39;同意&#39;</span></span>
+<span id="cb23-5"><a href="index.html#cb23-5"></a>e1<span class="op">$</span>Q1n[e1<span class="op">$</span>Q1<span class="op">==</span><span class="dv">4</span>]&lt;-<span class="st">&#39;非常同意&#39;</span></span>
+<span id="cb23-6"><a href="index.html#cb23-6"></a>e1<span class="op">$</span>Q1n=<span class="kw">factor</span>(e1<span class="op">$</span>Q1n, <span class="dt">levels=</span><span class="kw">c</span>(<span class="st">&#39;非常不同意&#39;</span>,<span class="st">&#39;不同意&#39;</span>,<span class="st">&#39;同意&#39;</span>,<span class="st">&#39;非常同意&#39;</span>))</span>
+<span id="cb23-7"><a href="index.html#cb23-7"></a><span class="kw">par</span>(<span class="dt">bg=</span><span class="st">&#39;lightblue&#39;</span>) <span class="co">#family=&quot;&quot;</span></span>
+<span id="cb23-8"><a href="index.html#cb23-8"></a><span class="kw">barplot</span>(<span class="kw">table</span>(e1<span class="op">$</span>Q1n), <span class="dt">col=</span><span class="st">&#39;white&#39;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="index.html#cb24-1"></a>extrafont<span class="op">::</span><span class="kw">fonts</span>()</span></code></pre></div>
 </div>
 </div>
 <div id="讀取網路-csv" class="section level2">
 <h2><span class="header-section-number">1.7</span> 讀取網路 CSV</h2>
 <p>我們可以用函式讀取網路資料，以read.csv(“<code>PATH/Website</code>”)表示。</p>
 <p>以紐西蘭政府資料為例：<a href="https://www.stats.govt.nz/large-datasets/csv-files-for-download/">stat.govt.nz</a></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="index.html#cb28-1"></a>f1 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2019-financial-year-provisional/Download-data/annual-enterprise-survey-2019-financial-year-provisional-size-bands-csv.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1"></a>f1 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2019-financial-year-provisional/Download-data/annual-enterprise-survey-2019-financial-year-provisional-size-bands-csv.csv&quot;</span>)</span></code></pre></div>
 <ul>
 <li><code>rio::import()</code></li>
 </ul>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1"></a>qurl =<span class="st"> &#39;https://raw.githubusercontent.com/TsaiChiahung/SocialStat2018/master/Data/Advertising.csv&#39;</span></span>
-<span id="cb29-2"><a href="index.html#cb29-2"></a><span class="co"># download</span></span>
-<span id="cb29-3"><a href="index.html#cb29-3"></a>tmp&lt;-rio<span class="op">::</span><span class="kw">import</span>(qurl)</span>
-<span id="cb29-4"><a href="index.html#cb29-4"></a>tmp_html&lt;-knitr<span class="op">::</span><span class="kw">kable</span>(tmp, <span class="dt">caption=</span><span class="st">&quot;廣告公司資料&quot;</span>, <span class="dt">format =</span> <span class="st">&#39;html&#39;</span>)</span>
-<span id="cb29-5"><a href="index.html#cb29-5"></a>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(tmp_html,<span class="st">&#39;striped&#39;</span>,<span class="dt">font_size =</span> <span class="dv">20</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="index.html#cb26-1"></a>qurl =<span class="st"> &#39;https://raw.githubusercontent.com/TsaiChiahung/SocialStat2018/master/Data/Advertising.csv&#39;</span></span>
+<span id="cb26-2"><a href="index.html#cb26-2"></a><span class="co"># download</span></span>
+<span id="cb26-3"><a href="index.html#cb26-3"></a>tmp&lt;-rio<span class="op">::</span><span class="kw">import</span>(qurl)</span>
+<span id="cb26-4"><a href="index.html#cb26-4"></a>tmp_html&lt;-knitr<span class="op">::</span><span class="kw">kable</span>(tmp, <span class="dt">caption=</span><span class="st">&quot;廣告公司資料&quot;</span>, <span class="dt">format =</span> <span class="st">&#39;html&#39;</span>)</span>
+<span id="cb26-5"><a href="index.html#cb26-5"></a>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(tmp_html,<span class="st">&#39;striped&#39;</span>,<span class="dt">font_size =</span> <span class="dv">20</span> )</span></code></pre></div>
 <table class="table table-striped" style="font-size: 20px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:unnamed-chunk-228">Table 1.1: </span>廣告公司資料
+<span id="tab:unnamed-chunk-17">Table 1.1: </span>廣告公司資料
 </caption>
 <thead>
 <tr>
@@ -3783,35 +3773,35 @@ sales
 <ul>
 <li><code>download.file()</code>&amp;<code>unzip()</code></li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="index.html#cb30-1"></a>temp &lt;-<span class="st"> </span><span class="kw">tempfile</span>() <span class="co">#create a temp path</span></span>
-<span id="cb30-2"><a href="index.html#cb30-2"></a>urlfile &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;http://data.gdeltproject.org/events/20210306.export.CSV.zip&quot;</span>) </span>
-<span id="cb30-3"><a href="index.html#cb30-3"></a></span>
-<span id="cb30-4"><a href="index.html#cb30-4"></a><span class="kw">download.file</span>(urlfile,temp, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
-<span id="cb30-5"><a href="index.html#cb30-5"></a><span class="kw">unzip</span>(temp, <span class="st">&quot;20210306.export.CSV&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="index.html#cb31-1"></a>online_dt &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1"></a>temp &lt;-<span class="st"> </span><span class="kw">tempfile</span>() <span class="co">#create a temp path</span></span>
+<span id="cb27-2"><a href="index.html#cb27-2"></a>urlfile &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;http://data.gdeltproject.org/events/20210306.export.CSV.zip&quot;</span>) </span>
+<span id="cb27-3"><a href="index.html#cb27-3"></a></span>
+<span id="cb27-4"><a href="index.html#cb27-4"></a><span class="kw">download.file</span>(urlfile,temp, <span class="dt">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
+<span id="cb27-5"><a href="index.html#cb27-5"></a><span class="kw">unzip</span>(temp, <span class="st">&quot;20210306.export.CSV&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="index.html#cb28-1"></a>online_dt &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>)</span></code></pre></div>
 </div>
 <div id="其他讀取問題" class="section level2">
 <h2><span class="header-section-number">1.8</span> 其他讀取問題</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="index.html#cb32-1"></a>dt &lt;-<span class="st">  </span><span class="kw">read.csv</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span>
-<span id="cb32-2"><a href="index.html#cb32-2"></a><span class="kw">dim</span>(dt)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1"></a>dt &lt;-<span class="st">  </span><span class="kw">read.csv</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb29-2"><a href="index.html#cb29-2"></a><span class="kw">dim</span>(dt)</span></code></pre></div>
 <pre><code>## [1] 84412    58</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="index.html#cb34-1"></a>dt2 &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>)</span>
-<span id="cb34-2"><a href="index.html#cb34-2"></a><span class="kw">dim</span>(dt2)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="index.html#cb31-1"></a>dt2 &lt;-<span class="st"> </span><span class="kw">read.delim</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>)</span>
+<span id="cb31-2"><a href="index.html#cb31-2"></a><span class="kw">dim</span>(dt2)</span></code></pre></div>
 <pre><code>## [1] 84412    58</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="index.html#cb36-1"></a>dt3 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">fill =</span> T)</span>
-<span id="cb36-2"><a href="index.html#cb36-2"></a><span class="co">#cannot read without `fill=T`</span></span>
-<span id="cb36-3"><a href="index.html#cb36-3"></a></span>
-<span id="cb36-4"><a href="index.html#cb36-4"></a><span class="kw">dim</span>(dt3)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="index.html#cb33-1"></a>dt3 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">fill =</span> T)</span>
+<span id="cb33-2"><a href="index.html#cb33-2"></a><span class="co">#cannot read without `fill=T`</span></span>
+<span id="cb33-3"><a href="index.html#cb33-3"></a></span>
+<span id="cb33-4"><a href="index.html#cb33-4"></a><span class="kw">dim</span>(dt3)</span></code></pre></div>
 <pre><code>## [1] 45100    58</code></pre>
 <p>以上我們可以很明顯發現<strong>dt3</strong>有些資料並沒有完全讀到(讀取漏行的問題)，並在加入<code>quote</code>參數後解決。</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="index.html#cb38-1"></a>dt4 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">fill =</span> T, <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb38-2"><a href="index.html#cb38-2"></a><span class="kw">dim</span>(dt4)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="index.html#cb35-1"></a>dt4 &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">fill =</span> T, <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb35-2"><a href="index.html#cb35-2"></a><span class="kw">dim</span>(dt4)</span></code></pre></div>
 <pre><code>## [1] 84413    58</code></pre>
 <p>檢查資料方式可以透過<code>count.fields()</code>檢查。</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="index.html#cb40-1"></a>nfields1 &lt;-<span class="st">  </span><span class="kw">count.fields</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span>
-<span id="cb40-2"><a href="index.html#cb40-2"></a>nfields1</span></code></pre></div>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="index.html#cb41-1"></a>nfields2 &lt;-<span class="st">  </span><span class="kw">count.fields</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb41-2"><a href="index.html#cb41-2"></a>nfields2</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="index.html#cb37-1"></a>nfields1 &lt;-<span class="st">  </span><span class="kw">count.fields</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>)</span>
+<span id="cb37-2"><a href="index.html#cb37-2"></a>nfields1</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="index.html#cb38-1"></a>nfields2 &lt;-<span class="st">  </span><span class="kw">count.fields</span>(<span class="st">&quot;20210306.export.CSV&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">quote =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb38-2"><a href="index.html#cb38-2"></a>nfields2</span></code></pre></div>
 <p>關於<code>read.table()</code>與<code>read.delim()</code>讀取行數問題詳細討論可以參照：<a href="https://www.cnblogs.com/jessepeng/p/11445943.html">Link</a></p>
 </div>
 <div id="資料匯出" class="section level2">
@@ -3819,8 +3809,8 @@ sales
 <ul>
 <li><code>wtrie.table()</code>、<code>write.csv()</code>、<code>saveRDS()</code></li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="index.html#cb42-1"></a><span class="kw">write.table</span>(a, <span class="st">&quot;newdat.txt&quot;</span>) <span class="co">#a = councilor.csv</span></span>
-<span id="cb42-2"><a href="index.html#cb42-2"></a><span class="kw">read.table</span>(<span class="st">&quot;newdat.txt&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="index.html#cb39-1"></a><span class="kw">write.table</span>(a, <span class="st">&quot;newdat.txt&quot;</span>) <span class="co">#a = councilor.csv</span></span>
+<span id="cb39-2"><a href="index.html#cb39-2"></a><span class="kw">read.table</span>(<span class="st">&quot;newdat.txt&quot;</span>)</span></code></pre></div>
 <pre><code>##    Year budget       unit contracter open
 ## 1  2015    676     水利處       台球  Yes
 ## 2  2016    673 新建工程處       茂盛  Yes
@@ -3832,8 +3822,8 @@ sales
 ## 8  2016    154 新建工程處       茂盛  Yes
 ## 9  2016    142 新建工程處       冠君  Yes
 ## 10 2016    123 新建工程處     未發包  Yes</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="index.html#cb44-1"></a><span class="kw">saveRDS</span>(a, <span class="st">&quot;newdat.rds&quot;</span>)</span>
-<span id="cb44-2"><a href="index.html#cb44-2"></a><span class="kw">readRDS</span>(<span class="st">&quot;newdat.rds&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="index.html#cb41-1"></a><span class="kw">saveRDS</span>(a, <span class="st">&quot;newdat.rds&quot;</span>)</span>
+<span id="cb41-2"><a href="index.html#cb41-2"></a><span class="kw">readRDS</span>(<span class="st">&quot;newdat.rds&quot;</span>)</span></code></pre></div>
 <pre><code>##    Year budget       unit contracter open
 ## 1  2015    676     水利處       台球  Yes
 ## 2  2016    673 新建工程處       茂盛  Yes
