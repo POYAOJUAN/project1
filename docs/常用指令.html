@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 常用指令 | 社會科學統計方法</title>
+  <meta name="description" content="Chapter 3 常用指令 | 社會科學統計方法" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 常用指令 | 社會科學統計方法" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 常用指令 | 社會科學統計方法" />
+  
+  
+  
+
+<meta name="author" content="PO-YAO JUAN" />
+
+
+<meta name="date" content="2021-03-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="資料清洗與轉換.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">社會科學統計方法</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 資料讀取</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#設定路徑"><i class="fa fa-check"></i><b>1.1</b> 設定路徑</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#tidyverse-與-base-r"><i class="fa fa-check"></i><b>1.2</b> tidyverse 與 Base R</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#讀取-csv"><i class="fa fa-check"></i><b>1.3</b> 讀取 CSV</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#讀取-txt"><i class="fa fa-check"></i><b>1.4</b> 讀取 TXT</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#讀取-stata"><i class="fa fa-check"></i><b>1.5</b> 讀取 STATA</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#讀取-spss"><i class="fa fa-check"></i><b>1.6</b> 讀取 SPSS</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#更改資料變數示範"><i class="fa fa-check"></i><b>1.6.1</b> 更改資料變數示範</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#讀取網路-csv"><i class="fa fa-check"></i><b>1.7</b> 讀取網路 CSV</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#其他讀取問題"><i class="fa fa-check"></i><b>1.8</b> 其他讀取問題</a></li>
+<li class="chapter" data-level="1.9" data-path="index.html"><a href="index.html#資料匯出"><i class="fa fa-check"></i><b>1.9</b> 資料匯出</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html"><i class="fa fa-check"></i><b>2</b> 資料清洗與轉換</a><ul>
+<li class="chapter" data-level="2.1" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#管線pipe的介紹"><i class="fa fa-check"></i><b>2.1</b> 管線(pipe)的介紹</a></li>
+<li class="chapter" data-level="2.2" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#管線使用邏輯"><i class="fa fa-check"></i><b>2.2</b> 管線使用邏輯 %&gt;%</a></li>
+<li class="chapter" data-level="2.3" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#dplyr資料轉換"><i class="fa fa-check"></i><b>2.3</b> dplyr資料轉換</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#filter"><i class="fa fa-check"></i><b>2.3.1</b> filter()</a></li>
+<li class="chapter" data-level="2.3.2" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#arrange"><i class="fa fa-check"></i><b>2.3.2</b> arrange()</a></li>
+<li class="chapter" data-level="2.3.3" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#select"><i class="fa fa-check"></i><b>2.3.3</b> select()</a></li>
+<li class="chapter" data-level="2.3.4" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#mutate"><i class="fa fa-check"></i><b>2.3.4</b> mutate()</a></li>
+<li class="chapter" data-level="2.3.5" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#summarise"><i class="fa fa-check"></i><b>2.3.5</b> summarise()</a></li>
+<li class="chapter" data-level="2.3.6" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#group_by"><i class="fa fa-check"></i><b>2.3.6</b> group_by()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="資料清洗與轉換.html"><a href="資料清洗與轉換.html#reshape2"><i class="fa fa-check"></i><b>2.4</b> reshape2</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="常用指令.html"><a href="常用指令.html"><i class="fa fa-check"></i><b>3</b> 常用指令</a><ul>
+<li class="chapter" data-level="3.1" data-path="常用指令.html"><a href="常用指令.html#管理環境空間"><i class="fa fa-check"></i><b>3.1</b> 管理環境空間</a></li>
+<li class="chapter" data-level="3.2" data-path="常用指令.html"><a href="常用指令.html#程式相關"><i class="fa fa-check"></i><b>3.2</b> 程式相關</a></li>
+<li class="chapter" data-level="3.3" data-path="常用指令.html"><a href="常用指令.html#字串相關"><i class="fa fa-check"></i><b>3.3</b> 字串相關</a></li>
+<li class="chapter" data-level="3.4" data-path="常用指令.html"><a href="常用指令.html#常用指令大全"><i class="fa fa-check"></i><b>3.4</b> 常用指令大全</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="常用指令.html"><a href="常用指令.html#基本相關"><i class="fa fa-check"></i><b>3.4.1</b> 基本相關</a></li>
+<li class="chapter" data-level="3.4.2" data-path="常用指令.html"><a href="常用指令.html#數學相關"><i class="fa fa-check"></i><b>3.4.2</b> 數學相關</a></li>
+<li class="chapter" data-level="3.4.3" data-path="常用指令.html"><a href="常用指令.html#物件相關"><i class="fa fa-check"></i><b>3.4.3</b> 物件相關</a></li>
+<li class="chapter" data-level="3.4.4" data-path="常用指令.html"><a href="常用指令.html#作圖相關"><i class="fa fa-check"></i><b>3.4.4</b> 作圖相關</a></li>
+<li class="chapter" data-level="3.4.5" data-path="常用指令.html"><a href="常用指令.html#其它相關"><i class="fa fa-check"></i><b>3.4.5</b> 其它相關</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">社會科學統計方法</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="常用指令" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> 常用指令</h1>
+<div id="管理環境空間" class="section level2">
+<h2><span class="header-section-number">3.1</span> 管理環境空間</h2>
+<ul>
+<li><code>attach()</code> 增加工作環境中指定資料內的變數</li>
+<li><code>detach()</code> 與上述相反<br />
+</li>
+<li><code>rm(list=ls())</code> 從工作環境移除所有的向量、列表、資料框等等。<br />
+</li>
+<li><code>rm()</code>刪除特定的向量、列表、資料框等等。<br />
+</li>
+<li><code>save.image()</code>儲存環境空間內所有的資料與結果。<br />
+</li>
+<li><code>load()</code> 讀取rda檔</li>
+</ul>
+</div>
+<div id="程式相關" class="section level2">
+<h2><span class="header-section-number">3.2</span> 程式相關</h2>
+<ul>
+<li><code>print()</code> 顯示資料框、向量、列表等等，但是無法附加上文字。<br />
+</li>
+<li><code>source()</code> R可以讀取既有指令的檔案，在不必開啟命令稿的情況下直接執行多行程式，可節省許多篇幅以及時間。 如：</li>
+</ul>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="常用指令.html#cb76-1"></a><span class="kw">sink</span>(<span class="st">&quot;twohistograms.R&quot;</span>) <span class="co">#define a new script file</span></span>
+<span id="cb76-2"><a href="常用指令.html#cb76-2"></a><span class="kw">cat</span>(<span class="st">&quot;set.seed(02138)&quot;</span>) <span class="co">#input a function that sets starting number for random number</span></span>
+<span id="cb76-3"><a href="常用指令.html#cb76-3"></a><span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>) <span class="co">#end of line</span></span>
+<span id="cb76-4"><a href="常用指令.html#cb76-4"></a><span class="kw">cat</span>(<span class="st">&quot;#write R script to a file without opening a document&quot;</span>)</span>
+<span id="cb76-5"><a href="常用指令.html#cb76-5"></a><span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)  <span class="co">#end of line</span></span>
+<span id="cb76-6"><a href="常用指令.html#cb76-6"></a> <span class="kw">cat</span>(<span class="st">&quot;fnorm&lt;-function(mu){            #create a function with a parameter: mu</span></span>
+<span id="cb76-7"><a href="常用指令.html#cb76-7"></a><span class="st">      sample.o&lt;-rnorm(20,mu,1/sqrt(mu))  #define the 1st vector that generates random numbers</span></span>
+<span id="cb76-8"><a href="常用指令.html#cb76-8"></a><span class="st">      sample.i&lt;-sample.o+runif(1,0,10)  #define the 2nd vector that generates random numbers</span></span>
+<span id="cb76-9"><a href="常用指令.html#cb76-9"></a><span class="st">      par(mfrow=c(1,2))                 #set parameter of graphic for 1*2 graphics</span></span>
+<span id="cb76-10"><a href="常用指令.html#cb76-10"></a><span class="st">      hist(sample.o, col=1, main=&#39;&#39;,    #histogram with Basic R</span></span>
+<span id="cb76-11"><a href="常用指令.html#cb76-11"></a><span class="st">                xlab=&#39;Original sample&#39;)</span></span>
+<span id="cb76-12"><a href="常用指令.html#cb76-12"></a><span class="st">             hist(sample.i, col=4, main=&#39;&#39;, #another histogram</span></span>
+<span id="cb76-13"><a href="常用指令.html#cb76-13"></a><span class="st">              xlab=&#39;Original sample + random number&#39;)</span></span>
+<span id="cb76-14"><a href="常用指令.html#cb76-14"></a><span class="st">      }&quot;</span>)</span>
+<span id="cb76-15"><a href="常用指令.html#cb76-15"></a> <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)  <span class="co">#end of function</span></span>
+<span id="cb76-16"><a href="常用指令.html#cb76-16"></a> <span class="kw">sink</span>()     <span class="co">#save the script in the specified file</span></span>
+<span id="cb76-17"><a href="常用指令.html#cb76-17"></a><span class="kw">file.show</span>(<span class="st">&quot;twohistograms.R&quot;</span>) <span class="co">#Opening an editor to show the script</span></span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="常用指令.html#cb77-1"></a><span class="kw">source</span>(<span class="st">&quot;twohistograms.R&quot;</span>)</span>
+<span id="cb77-2"><a href="常用指令.html#cb77-2"></a><span class="kw">fnorm</span>(<span class="dv">1</span>)</span></code></pre></div>
+<ul>
+<li><code>with()</code> 當環境空間有一個以上的資料框，為了避免混淆，可以使用該指令進行分析</li>
+</ul>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="常用指令.html#cb78-1"></a><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb78-2"><a href="常用指令.html#cb78-2"></a><span class="kw">library</span>(car)</span>
+<span id="cb78-3"><a href="常用指令.html#cb78-3"></a><span class="kw">with</span>(Duncan, <span class="kw">hist</span>(income, <span class="dt">col=</span><span class="dv">2</span>))</span>
+<span id="cb78-4"><a href="常用指令.html#cb78-4"></a><span class="kw">with</span>(Salaries, <span class="kw">hist</span>(salary, <span class="dt">col=</span><span class="dv">6</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-256-1.png" width="672" />
+- <code>names()</code> 顯示資料框的變數名稱</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="常用指令.html#cb79-1"></a><span class="kw">names</span>(mtcars)</span></code></pre></div>
+<pre><code>##  [1] &quot;mpg&quot;  &quot;cyl&quot;  &quot;disp&quot; &quot;hp&quot;   &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot; &quot;vs&quot;   &quot;am&quot;   &quot;gear&quot; &quot;carb&quot;</code></pre>
+<ul>
+<li><code>which()</code> 顯示特定變數</li>
+</ul>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="常用指令.html#cb81-1"></a><span class="kw">which</span>(Orange<span class="op">$</span>circumference<span class="op">&gt;</span><span class="dv">100</span>)</span></code></pre></div>
+<pre><code>##  [1]  4  5  6  7 10 11 12 13 14 18 19 20 21 24 25 26 27 28 32 33 34 35</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="常用指令.html#cb83-1"></a>oc&lt;-<span class="kw">which</span>(Orange<span class="op">$</span>circumference<span class="op">&gt;</span><span class="dv">100</span>) <span class="co">#create a vector </span></span>
+<span id="cb83-2"><a href="常用指令.html#cb83-2"></a>                    <span class="co">#of data that meets a condition</span></span>
+<span id="cb83-3"><a href="常用指令.html#cb83-3"></a>Orange[oc,] <span class="co">#match data with the vector</span></span></code></pre></div>
+<pre><code>##    Tree  age circumference
+## 4     1 1004           115
+## 5     1 1231           120
+## 6     1 1372           142
+## 7     1 1582           145
+## 10    2  664           111
+## 11    2 1004           156
+## 12    2 1231           172
+## 13    2 1372           203
+## 14    2 1582           203
+## 18    3 1004           108
+## 19    3 1231           115
+## 20    3 1372           139
+## 21    3 1582           140
+## 24    4  664           112
+## 25    4 1004           167
+## 26    4 1231           179
+## 27    4 1372           209
+## 28    4 1582           214
+## 32    5 1004           125
+## 33    5 1231           142
+## 34    5 1372           174
+## 35    5 1582           177</code></pre>
+<ul>
+<li><code>rep(A, n)</code> 重複A數值或者字串n次</li>
+</ul>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="常用指令.html#cb85-1"></a><span class="kw">rep</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## [1] 3 3 3 3 3</code></pre>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="常用指令.html#cb87-1"></a><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;大&quot;</span>, <span class="dv">3</span>), <span class="kw">rep</span>(<span class="st">&quot;中&quot;</span>, <span class="dv">1</span>), <span class="kw">rep</span>(<span class="st">&quot;小&quot;</span>,<span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;大&quot; &quot;大&quot; &quot;大&quot; &quot;中&quot; &quot;小&quot; &quot;小&quot;</code></pre>
+<ul>
+<li><code>seq(i,j)</code> 傳回i到j的連續數字</li>
+</ul>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="常用指令.html#cb89-1"></a><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="常用指令.html#cb91-1"></a><span class="kw">seq</span>(<span class="dv">100</span>,<span class="dv">110</span>, <span class="dt">by=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] 100 102 104 106 108 110</code></pre>
+<ul>
+<li><code>seq(i:j)</code> 傳回i到j的順位數字</li>
+</ul>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="常用指令.html#cb93-1"></a><span class="kw">seq</span>(<span class="dv">5</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>## [1] 1 2 3 4 5 6</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="常用指令.html#cb95-1"></a><span class="kw">seq</span>(<span class="dv">100</span><span class="op">:</span><span class="dv">110</span>)</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11</code></pre>
+</div>
+<div id="字串相關" class="section level2">
+<h2><span class="header-section-number">3.3</span> 字串相關</h2>
+<ul>
+<li><code>grep()</code></li>
+</ul>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="常用指令.html#cb97-1"></a>latvija&lt;-<span class="kw">c</span>(<span class="st">&quot;Daugavpils&quot;</span>,<span class="st">&quot;Jēkabpils&quot;</span>,<span class="st">&quot;Jelgava</span></span>
+<span id="cb97-2"><a href="常用指令.html#cb97-2"></a><span class="st">           Liepāja&quot;</span>,<span class="st">&quot;Rēzekne&quot;</span>,<span class="st">&quot;Rīga&quot;</span>,<span class="st">&quot;Valmiera&quot;</span>,</span>
+<span id="cb97-3"><a href="常用指令.html#cb97-3"></a>           <span class="st">&quot;Ventspils&quot;</span>)</span>
+<span id="cb97-4"><a href="常用指令.html#cb97-4"></a><span class="kw">grep</span>(<span class="st">&quot;pils&quot;</span>, latvija)</span></code></pre></div>
+<pre><code>## [1] 1 2 7</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="常用指令.html#cb99-1"></a>latvija[<span class="kw">grep</span>(<span class="st">&quot;pils&quot;</span>, latvija)]</span></code></pre></div>
+<pre><code>## [1] &quot;Daugavpils&quot;       &quot;J&lt;U+0113&gt;kabpils&quot; &quot;Ventspils&quot;</code></pre>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="常用指令.html#cb101-1"></a>dat&lt;-<span class="kw">read.csv</span>(<span class="st">&quot;c:/Users/Juan/Desktop/rproject/opendata106N0101.csv&quot;</span>, <span class="dt">header=</span>T, <span class="dt">fileEncoding =</span> <span class="st">&quot;utf-8&quot;</span>)</span>
+<span id="cb101-2"><a href="常用指令.html#cb101-2"></a>district&lt;-dat[<span class="kw">grep</span>(<span class="st">&quot;區&quot;</span>, dat<span class="op">$</span>code), ]</span>
+<span id="cb101-3"><a href="常用指令.html#cb101-3"></a><span class="kw">head</span>(dat, <span class="dt">n=</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##           code 年底人口數 土地面積 人口密度
+## 1 新北市板橋區     551480  23.1373    23835
+## 2 新北市三重區     387484  16.3170    23747
+## 3 新北市中和區     413590  20.1440    20532</code></pre>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="常用指令.html#cb103-1"></a> L &lt;-<span class="st"> </span><span class="kw">list</span>(a&lt;-<span class="kw">c</span>(<span class="st">&#39;lecture&#39;</span>, <span class="st">&#39;movie&#39;</span>), b&lt;-<span class="kw">c</span>(<span class="st">&#39;Movie channel&#39;</span>), <span class="dt">c=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>),</span>
+<span id="cb103-2"><a href="常用指令.html#cb103-2"></a>           d&lt;-<span class="kw">c</span>(<span class="st">&#39;movie&#39;</span>,<span class="st">&#39;food&#39;</span>, <span class="st">&quot;news&quot;</span>,<span class="st">&#39;car&#39;</span>,<span class="st">&#39;music&#39;</span>))</span>
+<span id="cb103-3"><a href="常用指令.html#cb103-3"></a> match.s&lt;-<span class="kw">grep</span>(<span class="st">&#39;movie&#39;</span>, L)  ; match.s </span></code></pre></div>
+<pre><code>## [1] 1 4</code></pre>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="常用指令.html#cb105-1"></a>L[<span class="kw">grep</span>(<span class="st">&#39;movie&#39;</span>, L)]</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;lecture&quot; &quot;movie&quot;  
+## 
+## [[2]]
+## [1] &quot;movie&quot; &quot;food&quot;  &quot;news&quot;  &quot;car&quot;   &quot;music&quot;</code></pre>
+<p>-<code>gsub()</code> 取代符合條件的字串。以上述為例，假設我們想把「臺」一律改為「台」</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="常用指令.html#cb107-1"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb107-2"><a href="常用指令.html#cb107-2"></a>dat2 &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span></span>
+<span id="cb107-3"><a href="常用指令.html#cb107-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">code=</span><span class="kw">gsub</span>(<span class="st">&quot;臺&quot;</span>, <span class="st">&quot;台&quot;</span>, dat<span class="op">$</span>code))</span>
+<span id="cb107-4"><a href="常用指令.html#cb107-4"></a>dat2[<span class="kw">grep</span>(<span class="st">&#39;台北市&#39;</span>, dat2<span class="op">$</span>code), ] </span></code></pre></div>
+<pre><code>##            code 年底人口數 土地面積 人口密度
+## 30 台北市松山區     206988   9.2878    22286
+## 31 台北市信義區     225753  11.2077    20143
+## 32 台北市大安區     309969  11.3614    27283
+## 33 台北市中山區     230710  13.6821    16862
+## 34 台北市中正區     159608   7.6071    20981
+## 35 台北市大同區     129278   5.6815    22754
+## 36 台北市萬華區     191850   8.8522    21673
+## 37 台北市文山區     274424  31.5090     8709
+## 38 台北市南港區     122155  21.8424     5593
+## 39 台北市內湖區     287771  31.5787     9113
+## 40 台北市士林區     288295  62.3682     4622
+## 41 台北市北投區     256456  56.8216     4513</code></pre>
+<ul>
+<li><code>substr()</code>：擷取符合起始與結束字元的字串。</li>
+</ul>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="常用指令.html#cb109-1"></a>dat3 &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb109-2"><a href="常用指令.html#cb109-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">city=</span><span class="kw">substr</span>(dat<span class="op">$</span>code, <span class="dv">1</span>, <span class="dv">3</span>))</span>
+<span id="cb109-3"><a href="常用指令.html#cb109-3"></a></span>
+<span id="cb109-4"><a href="常用指令.html#cb109-4"></a><span class="kw">head</span>(dat3, <span class="dt">n=</span><span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##           code 年底人口數 土地面積 人口密度   city
+## 1 新北市板橋區     551480  23.1373    23835 新北市
+## 2 新北市三重區     387484  16.3170    23747 新北市
+## 3 新北市中和區     413590  20.1440    20532 新北市</code></pre>
+<ul>
+<li><code>sub()</code> and <code>gsub()</code></li>
+</ul>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="常用指令.html#cb111-1"></a>country&lt;-<span class="kw">c</span>( <span class="st">&quot;United States&quot;</span>, <span class="st">&quot;Republic of Kenya&quot;</span>, <span class="st">&quot;Republic of Korea&quot;</span>)</span>
+<span id="cb111-2"><a href="常用指令.html#cb111-2"></a><span class="kw">sub</span>(<span class="st">&#39;Republic of&#39;</span>, <span class="st">&#39;&#39;</span>, country) </span></code></pre></div>
+<pre><code>## [1] &quot;United States&quot; &quot; Kenya&quot;        &quot; Korea&quot;</code></pre>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="常用指令.html#cb113-1"></a>zodiac&lt;-<span class="kw">c</span>( <span class="st">&quot;(mouse)&quot;</span>, <span class="st">&quot;(ox)&quot;</span>, <span class="st">&quot;(tiger)&quot;</span>, <span class="st">&quot;(rabbit)&quot;</span>, <span class="st">&quot;(dragon)&quot;</span>)</span>
+<span id="cb113-2"><a href="常用指令.html#cb113-2"></a>zodiac&lt;-<span class="kw">sub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">(&quot;</span>,<span class="st">&quot;&quot;</span>, zodiac)</span>
+<span id="cb113-3"><a href="常用指令.html#cb113-3"></a><span class="kw">sub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">)&quot;</span>,<span class="st">&quot;&quot;</span>, zodiac)</span></code></pre></div>
+<pre><code>## [1] &quot;mouse&quot;  &quot;ox&quot;     &quot;tiger&quot;  &quot;rabbit&quot; &quot;dragon&quot;</code></pre>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="常用指令.html#cb115-1"></a>country&lt;-<span class="kw">c</span>(<span class="st">&quot;People&#39;s Republic of China</span></span>
+<span id="cb115-2"><a href="常用指令.html#cb115-2"></a><span class="st">           Democratic Republic of Congo&quot;</span>, </span>
+<span id="cb115-3"><a href="常用指令.html#cb115-3"></a>           <span class="st">&quot;United States&quot;</span>,</span>
+<span id="cb115-4"><a href="常用指令.html#cb115-4"></a><span class="st">&quot;Republic of Kenya&quot;</span>, <span class="st">&quot;Republic of Korea&quot;</span>, </span>
+<span id="cb115-5"><a href="常用指令.html#cb115-5"></a><span class="st">&quot;Democratic People&#39;s Republic of Korea&quot;</span>)</span>
+<span id="cb115-6"><a href="常用指令.html#cb115-6"></a>country[<span class="kw">grep</span>(<span class="st">&#39;^Republic of&#39;</span>, country)]</span></code></pre></div>
+<pre><code>## [1] &quot;Republic of Kenya&quot; &quot;Republic of Korea&quot;</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="常用指令.html#cb117-1"></a><span class="kw">gsub</span>(<span class="st">&quot;^Republic of&quot;</span>, <span class="st">&quot;&quot;</span>, country) <span class="co">#`^` means from the start ;`$` from the end </span></span></code></pre></div>
+<pre><code>## [1] &quot;People&#39;s Republic of China\n           Democratic Republic of Congo&quot;
+## [2] &quot;United States&quot;                                                      
+## [3] &quot; Kenya&quot;                                                             
+## [4] &quot; Korea&quot;                                                             
+## [5] &quot;Democratic People&#39;s Republic of Korea&quot;</code></pre>
+<ul>
+<li><code>strsplit()</code></li>
+</ul>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="常用指令.html#cb119-1"></a>document &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature&#39;s God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation. We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.--Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world. He has refused his Assent to Laws, the most wholesome and necessary for the public good. He has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them. He has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only. He has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their public Records, for the sole purpose of fatiguing them into compliance with his measures. He has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people. He has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within. He has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands. He has obstructed the Administration of Justice, by refusing his Assent to Laws for establishing Judiciary powers. He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries. He has erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance. He has kept among us, in times of peace, Standing Armies without the Consent of our legislatures. He has affected to render the Military independent of and superior to the Civil power. He has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation: For Quartering large bodies of armed troops among us: For protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of these States: For cutting off our Trade with all parts of the world: For imposing Taxes on us without our Consent: For depriving us in many cases, of the benefits of Trial by Jury: For transporting us beyond Seas to be tried for pretended offences. For abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies: For taking away our Charters, abolishing our most valuable Laws, and altering fundamentally the Forms of our Governments: For suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever. He has abdicated Government here, by declaring us out of his Protection and waging War against us. He has plundered our seas, ravaged our Coasts, burnt our towns, and destroyed the lives of our people. He is at this time transporting large Armies of foreign Mercenaries to compleat the works of death, desolation and tyranny, already begun with circumstances of Cruelty &amp; perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head of a civilized nation. He has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands. He has excited domestic insurrections amongst us, and has endeavoured to bring on the inhabitants of our frontiers, the merciless Indian Savages, whose known rule of warfare, is an undistinguished destruction of all ages, sexes and conditions. In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people. Nor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends. We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, </span></span>
+<span id="cb119-2"><a href="常用指令.html#cb119-2"></a><span class="st">  &quot;</span>)            </span>
+<span id="cb119-3"><a href="常用指令.html#cb119-3"></a>doc &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.&quot;</span>)   </span>
+<span id="cb119-4"><a href="常用指令.html#cb119-4"></a></span>
+<span id="cb119-5"><a href="常用指令.html#cb119-5"></a>tmp &lt;-<span class="st"> </span><span class="kw">strsplit</span>(<span class="kw">c</span>(document,doc), <span class="dt">split=</span><span class="st">&quot; &quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="常用指令.html#cb120-1"></a>tmp <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-2"><a href="常用指令.html#cb120-2"></a><span class="st">  </span><span class="kw">unlist</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-3"><a href="常用指令.html#cb120-3"></a><span class="st">  </span><span class="kw">as_tibble</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-4"><a href="常用指令.html#cb120-4"></a><span class="st">  </span><span class="kw">count</span>(value) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb120-5"><a href="常用指令.html#cb120-5"></a><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n))</span></code></pre></div>
+<pre><code>## # A tibble: 633 x 2
+##    value     n
+##    &lt;chr&gt; &lt;int&gt;
+##  1 of       76
+##  2 the      75
+##  3 to       64
+##  4 and      55
+##  5 our      25
+##  6 for      20
+##  7 has      20
+##  8 their    20
+##  9 He       18
+## 10 in       18
+## # ... with 623 more rows</code></pre>
+</div>
+<div id="常用指令大全" class="section level2">
+<h2><span class="header-section-number">3.4</span> 常用指令大全</h2>
+<div id="基本相關" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> 基本相關</h3>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+基本函數
+</th>
+<th style="text-align:left;">
+功能
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+library(套件)
+</td>
+<td style="text-align:left;">
+載入套件
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+data(資料檔)
+</td>
+<td style="text-align:left;">
+載入資料檔
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+head(資料檔, n)
+</td>
+<td style="text-align:left;">
+顯示資料檔前n筆資料，預設n=6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+tail(資料檔, n)
+</td>
+<td style="text-align:left;">
+顯示資料檔後n筆資料，預設n=6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+setwd(“PATH”)
+</td>
+<td style="text-align:left;">
+改變工作目錄
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+getwd()
+</td>
+<td style="text-align:left;">
+取得工作目錄
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+length()
+</td>
+<td style="text-align:left;">
+計算物件中元素的數量
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mode()
+</td>
+<td style="text-align:left;">
+取得物件的資料型態
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+class()
+</td>
+<td style="text-align:left;">
+取得物件的類別
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+str()
+</td>
+<td style="text-align:left;">
+取得物件的資料結構
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rm(list=ls());gc()
+</td>
+<td style="text-align:left;">
+清除所有物件
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="數學相關" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> 數學相關</h3>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+數學函數
+</th>
+<th style="text-align:left;">
+功能
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+sum()
+</td>
+<td style="text-align:left;">
+傳回元素總和
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+abs()
+</td>
+<td style="text-align:left;">
+傳回絕對值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sqrt()
+</td>
+<td style="text-align:left;">
+傳回開根號值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ceiling(x)
+</td>
+<td style="text-align:left;">
+傳回大於等於x的最小整數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+floor(x)
+</td>
+<td style="text-align:left;">
+傳回小於等於x的最大整數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+round(x,n)
+</td>
+<td style="text-align:left;">
+將x四捨五入到第n位
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+trunc(x)
+</td>
+<td style="text-align:left;">
+傳回x的整數部分
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+max()
+</td>
+<td style="text-align:left;">
+傳回最大值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+min()
+</td>
+<td style="text-align:left;">
+傳回最小值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sign()
+</td>
+<td style="text-align:left;">
+判斷正負號
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+log(x,base)
+</td>
+<td style="text-align:left;">
+對數函數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sin();cos();tan();asin();acos;atan()
+</td>
+<td style="text-align:left;">
+三角函數與反三角函數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+mean()
+</td>
+<td style="text-align:left;">
+傳回平均值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+median()
+</td>
+<td style="text-align:left;">
+傳回中位數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+table()
+</td>
+<td style="text-align:left;">
+計數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+var()
+</td>
+<td style="text-align:left;">
+傳回變異數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sd()
+</td>
+<td style="text-align:left;">
+傳回標準差
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+range()
+</td>
+<td style="text-align:left;">
+傳回最大值與最小值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+IQR()
+</td>
+<td style="text-align:left;">
+傳回四分位距
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cor(x,y)
+</td>
+<td style="text-align:left;">
+傳回x及y的相關係數
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="物件相關" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> 物件相關</h3>
+<pre><code>## Warning: 2 parsing failures.
+## row          col           expected    actual                                               file
+##   9 物件邏輯函數 delimiter or quote &lt;e7&gt;      &#39;c:/Users/Juan/Desktop/rproject/syntax/object.csv&#39;
+##   9 NA           2 columns          3 columns &#39;c:/Users/Juan/Desktop/rproject/syntax/object.csv&#39;</code></pre>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+物件邏輯函數
+</th>
+<th style="text-align:left;">
+功能
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+%/%
+</td>
+<td style="text-align:left;">
+整除
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+%%
+</td>
+<td style="text-align:left;">
+求餘數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+%*%
+</td>
+<td style="text-align:left;">
+矩陣相乘
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+%in%
+</td>
+<td style="text-align:left;">
+判斷是否在某集合內
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+|
+</td>
+<td style="text-align:left;">
+或(OR)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&amp;
+</td>
+<td style="text-align:left;">
+且(AND)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+!
+</td>
+<td style="text-align:left;">
+否(NOT)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+seq(from, to , by)
+</td>
+<td style="text-align:left;">
+產生以by為遞增的向量
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+assign("物件名稱
+</td>
+<td style="text-align:left;">
+運算式)"
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+c()
+</td>
+<td style="text-align:left;">
+建立向量物件
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+array(x,dim=())
+</td>
+<td style="text-align:left;">
+依照dim維度建立array物件
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+matrix(x, nrow, ncol, byrow)
+</td>
+<td style="text-align:left;">
+建立x為nrow*ncol矩陣、byrow=T時以烈的順序排列
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+factor(x, levels=c())
+</td>
+<td style="text-align:left;">
+依照levels排列建立factor物件
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+data.frame()
+</td>
+<td style="text-align:left;">
+建立data.frame物件
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+list(name=value1,….)
+</td>
+<td style="text-align:left;">
+建立list物件
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+rbind()
+</td>
+<td style="text-align:left;">
+依列合併
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+cbind()
+</td>
+<td style="text-align:left;">
+依行合併
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+t()
+</td>
+<td style="text-align:left;">
+轉置矩陣
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+det()
+</td>
+<td style="text-align:left;">
+求矩陣行列式值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+edit()
+</td>
+<td style="text-align:left;">
+以試算表方式編輯物件資料
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+View()
+</td>
+<td style="text-align:left;">
+以試算表方式顯示物件資料
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+fix()
+</td>
+<td style="text-align:left;">
+以試算表方式修改物件資料
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+scan()
+</td>
+<td style="text-align:left;">
+資料輸入
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+file.choose()
+</td>
+<td style="text-align:left;">
+以視窗選取代替路徑
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+as.
+</td>
+<td style="text-align:left;">
+各種物件轉換
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="作圖相關" class="section level3">
+<h3><span class="header-section-number">3.4.4</span> 作圖相關</h3>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+繪圖函數
+</th>
+<th style="text-align:left;">
+功能
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+plot(x)
+</td>
+<td style="text-align:left;">
+以序號為橫坐標(x軸)、y為縱座標(y軸)來繪圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+plot(x,y)
+</td>
+<td style="text-align:left;">
+以x(x軸)和y(y軸)來繪圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pie(x)
+</td>
+<td style="text-align:left;">
+繪製圓餅圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+boxplot(x)
+</td>
+<td style="text-align:left;">
+繪製盒形圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+stem(x)
+</td>
+<td style="text-align:left;">
+繪製莖葉圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dotchart(x)
+</td>
+<td style="text-align:left;">
+繪製點圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hist(x)
+</td>
+<td style="text-align:left;">
+繪製直方圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+barplot(x)
+</td>
+<td style="text-align:left;">
+繪製條形圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+contour(x,y,z)
+</td>
+<td style="text-align:left;">
+繪製等高線圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+point(x,y)
+</td>
+<td style="text-align:left;">
+加上點圖
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+line(x,y)
+</td>
+<td style="text-align:left;">
+加上直線
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+text(x,y,labels)
+</td>
+<td style="text-align:left;">
+在指定位置寫出指定文字
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+abline(a,b)
+</td>
+<td style="text-align:left;">
+加上直線(y=ax+b)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+legend(x,y,legend)
+</td>
+<td style="text-align:left;">
+在指定位置加上圖例
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+title(main,sub)
+</td>
+<td style="text-align:left;">
+加上標題或副標題
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+par(margin=c(a,b,c,d))
+</td>
+<td style="text-align:left;">
+設定底部、左邊、上方以及右邊的邊界值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+par(mfcol=c(a,b))
+</td>
+<td style="text-align:left;">
+以a*b矩陣將多張圖形畫在同一頁(按照行的順序畫圖)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+par(mfrow=c(a,b))
+</td>
+<td style="text-align:left;">
+以a*b矩陣將多張圖形畫在同一頁(按照列的順序畫圖)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="其它相關" class="section level3">
+<h3><span class="header-section-number">3.4.5</span> 其它相關</h3>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+其它函數
+</th>
+<th style="text-align:left;">
+功能
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+na.omit;na.exclude()
+</td>
+<td style="text-align:left;">
+刪除NA值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+is.na()
+</td>
+<td style="text-align:left;">
+判斷元素是否為NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+na.rm=T
+</td>
+<td style="text-align:left;">
+在某些函數內使用的參數，可以刪除NA值
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+proc.time();system.time()
+</td>
+<td style="text-align:left;">
+測量程式碼執行時間
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+system(“command”)
+</td>
+<td style="text-align:left;">
+呼叫系統函數
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sys.time()
+</td>
+<td style="text-align:left;">
+回傳電腦上的時間
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sys.sleep(x)
+</td>
+<td style="text-align:left;">
+讓城市戰時挺只執行x秒
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="資料清洗與轉換.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/POYAOJUAN/project1/edit/master/03-homework.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/POYAOJUAN/project1/blob/master/03-homework.Rmd",
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

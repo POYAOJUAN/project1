@@ -26,6 +26,25 @@ library(magrittr)
   
 ## 管線使用邏輯 %>%
 
+解釋
+```{r eval=F}
+function(data)
+data %>% function()
+
+```
+
+```{r}
+z <- c(1, 2, NA, 8, 3, NA, 3) 
+sum(is.na(z))
+```
+```{r message=F}
+library(dplyr)
+z %>% 
+  is.na() %>%
+  sum()
+```
+
+
 假設我們想要探索`mtcars`裡面的資料    
 題目：  **請問在馬力(hp)大於100匹的車子中，平均一加侖能跑幾英里(mpg)與平均車重(wt)是多少？**  
 
@@ -105,3 +124,21 @@ mtcars %>%
 ```
 
 **NOTE**：詳細可以參考[dplyr cran](https://cran.r-project.org/web/packages/dplyr/dplyr.pdf)或是[R for Data Science:Data transformation](https://r4ds.had.co.nz/transform.html)
+
+
+## reshape2
+
+```{r}
+library(reshape2)
+```
+
+```{r}
+wb <- read.csv("c:/Users/Juan/Desktop/rproject/wb_small.csv", sep = "")
+head(wb)
+```
+
+```{r}
+wb_melt <- reshape2::melt(wb, id.var="Country.Name")
+head(wb_melt)
+```
+

@@ -5,9 +5,18 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# 資料讀取與常用指令
+# 資料讀取
 
-## 資料讀取
+
+## 設定路徑
+
+```{r eval=FALSE}
+getwd() 
+setwd("C:/Users/Juan/Desktop/rproject/rproject")  
+#set your project
+```
+
+## tidyverse 與 Base R
 資料讀取會依照不同的資料型態有不同的套件讀取方式。
 
 - `base R` `readr`：.csv and .txt
@@ -16,13 +25,6 @@ site: bookdown::bookdown_site
 - `readstata13`：.dta (STATA)
 
 
-### 設定路徑
-```{r eval=FALSE}
-getwd()
-setwd("C:/Users/Juan/Desktop/rproject/rproject")
-```
-
-### 前置作業
 ```{r}
 library(tidyverse)
 ```
@@ -30,7 +32,9 @@ library(tidyverse)
 
 **NOTE**： 因為載入tidyverse套件出現的衝突訊息表示它複寫了基礎R的一些函式，如果你想要使用`stats`裡面的`filter()`以及`lag()`這兩個函式，則必須使用其完整名稱`stats::filter()`以及`stats::lag()`。
 
-### 讀取 CSV
+
+
+## 讀取 CSV
 
 根據R for Data Science by Garrett Grolemund, Hadley Wickham: Data Import作者描述。  
 
@@ -74,7 +78,7 @@ class(b)
 
 如果想要了解更多請參考[R for Data Science by Garrett Grolemund, Hadley Wickham: Data Import](https://r4ds.had.co.nz/data-import.html)
 
-### 讀取 TXT
+## 讀取 TXT
 
 ```{r }
 students <- read.table("C:/Users/Juan/Desktop/rproject/Studentsfull.txt", header=T)
@@ -91,7 +95,7 @@ student_delim <- read.delim("C:/Users/Juan/Desktop/rproject/Studentsfull.txt", s
 
 
 
-### 讀取 STATA
+## 讀取 STATA
 
 ```{r ,message=FALSE, warning=FALSE}
 c <- readstata13::read.dta13("C:/Users/Juan/Desktop/rproject/Mystata.dta")
@@ -102,7 +106,7 @@ c <- readstata13::read.dta13("C:/Users/Juan/Desktop/rproject/Mystata.dta")
 dplyr::glimpse(c) #faster and clearer than `str()`
 ```
 
-### 讀取 SPSS
+## 讀取 SPSS
 
 
 ```{r}
@@ -125,7 +129,25 @@ class(e1)
 
 **NOTE**： **haven**套件並不會讀取資料的中文標記。
 
-### 讀取網路 CSV
+### 更改資料變數示範
+
+```{r}
+e1$Q1n <- NA
+e1$Q1n[e1$Q1==1]<-'非常不同意'
+e1$Q1n[e1$Q1==2]<-'不同意'
+e1$Q1n[e1$Q1==3]<-'同意'
+e1$Q1n[e1$Q1==4]<-'非常同意'
+e1$Q1n=factor(e1$Q1n, levels=c('非常不同意','不同意','同意','非常同意'))
+par(bg='lightblue') #family=""
+barplot(table(e1$Q1n), col='white')
+```
+
+
+```{r eval=F}
+extrafont::fonts()
+```
+
+## 讀取網路 CSV
 
 我們可以用函式讀取網路資料，以read.csv("`PATH/Website`")表示。
 
@@ -169,7 +191,7 @@ online_dt <- read.delim("20210306.export.CSV")
 ```
 
 
-### 其他讀取問題
+## 其他讀取問題
 
 
 ```{r}
@@ -210,9 +232,7 @@ nfields2
 關於`read.table()`與`read.delim()`讀取行數問題詳細討論可以參照：[Link](https://www.cnblogs.com/jessepeng/p/11445943.html)
 
 
-## 常用指令
-
-### 資料匯出  
+## 資料匯出  
 
   - `wtrie.table()`、`write.csv()`、`saveRDS()`
 ```{r}
@@ -225,154 +245,4 @@ saveRDS(a, "newdat.rds")
 readRDS("newdat.rds")
 ```
 
-
-### 管理環境空間
-
- - `attach()` 增加工作環境中指定資料內的變數
- - `detach()` 與上述相反  
- - `rm(list=ls())` 從工作環境移除所有的向量、列表、資料框等等。  
- - `rm()`刪除特定的向量、列表、資料框等等。  
- - `save.image()`儲存環境空間內所有的資料與結果。  
- - `load()` 讀取rda檔  
- 
- 
- 
-### 程式相關   
-
- - `print()` 顯示資料框、向量、列表等等，但是無法附加上文字。  
- - `source()` R可以讀取既有指令的檔案，在不必開啟命令稿的情況下直接執行多行程式，可節省許多篇幅以及時間。  如：
- 
-```{r eval=F}
-sink("twohistograms.R") #define a new script file
-cat("set.seed(02138)") #input a function that sets starting number for random number
-cat("\n") #end of line
-cat("#write R script to a file without opening a document")
-cat("\n")  #end of line
- cat("fnorm<-function(mu){            #create a function with a parameter: mu
-      sample.o<-rnorm(20,mu,1/sqrt(mu))  #define the 1st vector that generates random numbers
-      sample.i<-sample.o+runif(1,0,10)  #define the 2nd vector that generates random numbers
-      par(mfrow=c(1,2))                 #set parameter of graphic for 1*2 graphics
-      hist(sample.o, col=1, main='',    #histogram with Basic R
-                xlab='Original sample')
-             hist(sample.i, col=4, main='', #another histogram
-              xlab='Original sample + random number')
-      }")
- cat("\n")  #end of function
- sink()     #save the script in the specified file
-file.show("twohistograms.R") #Opening an editor to show the script
-```
- 
-```{r , eval=F}
-source("twohistograms.R")
-fnorm(1)
-```
-
- - `with()` 當環境空間有一個以上的資料框，為了避免混淆，可以使用該指令進行分析  
-```{r message=FALSE, warning=FALSE}
-par(mfrow=c(1,2))
-library(car)
-with(Duncan, hist(income, col=2))
-with(Salaries, hist(salary, col=6))
-```
-  - `names()` 顯示資料框的變數名稱  
-```{r}
-names(mtcars)
-```
-  
-  - `which()` 顯示特定變數  
-```{r}
-which(Orange$circumference>100)
-```
-  
-```{r}
-oc<-which(Orange$circumference>100) #create a vector 
-                    #of data that meets a condition
-Orange[oc,] #match data with the vector
-```
-
- - `rep(A, n)` 重複A數值或者字串n次  
-```{r}
-rep(3, 5)
-```
-```{r}
-c(rep("大", 3), rep("中", 1), rep("小",2))
-```
-
- - `seq(i,j)` 傳回i到j的連續數字
-```{r}
-seq(1,10)
-```
-```{r}
-seq(100,110, by=2)
-```
- - `seq(i:j)` 傳回i到j的順位數字  
-```{r}
-seq(5:10)
-```
-```{r}
-seq(100:110)
-```
-
-### 字串相關
-
- - `grep()`
- 
-```{r}
-latvija<-c("Daugavpils","Jēkabpils","Jelgava
-           Liepāja","Rēzekne","Rīga","Valmiera",
-           "Ventspils")
-grep("pils", latvija)
-```
-```{r}
-latvija[grep("pils", latvija)]
-```
-```{r}
-
-dat<-read.csv("c:/Users/Juan/Desktop/rproject/opendata106N0101.csv", header=T, fileEncoding = "utf-8")
-district<-dat[grep("區", dat$code), ]
-head(dat, n=3)
-```
- 
-```{r}
- L <- list(a<-c('lecture', 'movie'), b<-c('Movie channel'), c=c(1:10),
-           d<-c('movie','food', "news",'car','music'))
- match.s<-grep('movie', L)  ; match.s 
-```
-```{r}
-L[grep('movie', L)]
-```
-
- -`gsub()` 取代符合條件的字串。以上述為例，假設我們想把「臺」一律改為「台」
-```{r}
-dat2 <- dat %>%
-  mutate(code=gsub("臺", "台", dat$code))
-dat2[grep('台北市', dat2$code), ] 
-```
-
- - `substr()`：擷取符合起始與結束字元的字串。
- 
-```{r}
-dat3 <- dat %>% 
-  mutate(city=substr(dat$code, 1, 3))
-
-head(dat3, n=3)
-```
- 
-
-## 更改資料變數操作
-```{r message=FALSE, warning=FALSE}
-#e1$Q1n <-c() `try to avoid`
-e1$Q1n <- NA
-e1$Q1n[e1$Q1==1]<-'非常不同意'
-e1$Q1n[e1$Q1==2]<-'不同意'
-e1$Q1n[e1$Q1==3]<-'同意'
-e1$Q1n[e1$Q1==4]<-'非常同意'
-e1$Q1n=factor(e1$Q1n, levels=c('非常不同意','不同意','同意','非常同意'))
-par(bg='lightblue', family='KaiTi')
-barplot(table(e1$Q1n), col='white')
-```
-
-```{r message=FALSE, warning=FALSE}
-extrafont::fonts()
-```
 
